@@ -1,1 +1,8 @@
 <h1>Hi, <%= current_user.email %>!</h1>
+
+<h3>Add an item</h3>
+<%= render partial: "items/form" %>
+
+<ul>
+  <%= render current_user.items %>
+</ul>
