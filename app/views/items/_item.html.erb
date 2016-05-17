@@ -1,1 +1,1 @@
-<li><%= item.name %></li>
+<li id="item-<%= item.id %>"><%= item.name %><%= link_to "", user_item_path(current_user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></li>
