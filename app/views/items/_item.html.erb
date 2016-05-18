@@ -1,3 +1,7 @@
-<tr>
-  <td><li id="item-<%= item.id %>"><%= item.name %>&nbsp<%= link_to "", user_item_path(current_user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>&nbsp<%= distance_of_time_in_words(item.created_at, item.created_at + 168.hours) %></li></td>
-</tr>
+<li id="item-<%= item.id %>">
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= link_to "", user_item_path(current_user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></td>
+    <td><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %> left </td>
+  </tr>
+</li>
