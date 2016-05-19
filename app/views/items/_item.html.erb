@@ -1,7 +1,5 @@
-<li id="item-<%= item.id %>">
-  <tr>
-    <td><%= item.name %></td>
-    <td><%= link_to "", user_item_path(current_user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></td>
-    <td><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %> left </td>
-  </tr>
-</li>
+<tr id="item-<%= item.id %>">
+  <td><%= item.name %></td>
+  <td><%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %> <%= item.created_at > Time.now - 7.days ? "overdue" : "left" %></td>
+  <td><%= link_to "", user_item_path(current_user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></td>
+</tr>

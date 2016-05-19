@@ -3,6 +3,11 @@
 <h3>Add an item</h3>
 <%= render partial: "items/form" %>
 
-<ul>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Item</th>
+    <th>Time remaining</th>
+    <th></th>
+  </tr>
   <%= render current_user.items %>
-</ul>
+</table>
